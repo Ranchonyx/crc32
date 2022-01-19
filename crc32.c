@@ -71,7 +71,7 @@ static const uint32_t crc32_table[256] = {
     0xb40bbe37, 0xc30c8ea1, 0x5a05df1b, 0x2d02ef8d
   };
   
-  uint32_t ccrc32(const uint8_t data[], size_t len) {
+  uint32_t compute_crc32(const uint8_t data[], size_t len) {
     uint32_t crc32 = 0xFFFFFFFF;
     
     for(size_t i = 0; i < len; i++) {
@@ -93,7 +93,7 @@ int main(int argc, char *argv[]) {
     
     clock_t start = clock();
     
-    printf("%lu\n", (unsigned long) ccrc32(argv[1], strlen(argv[1]) ));
+    printf("%lu\n", (unsigned long) compute_crc32(argv[1], strlen(argv[1]) ));
     
     clock_t end = clock();
     
